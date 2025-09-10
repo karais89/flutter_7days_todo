@@ -7,7 +7,7 @@
 
 ## 진행 상황
 - [x] Day 1 — 프로젝트 세팅 & 라우팅
-- [ ] Day 2 — Provider 상태관리 (TODO 추가/삭제/체크)
+- [x] Day 2 — Provider 상태관리 (TODO 추가/삭제/체크)
 - [ ] Day 3 — UI 개선 & UX 향상
 - [ ] Day 4 — 데이터 영구 저장
 - [ ] Day 5 — 테마 & 다국어
@@ -27,9 +27,9 @@
   * Hot reload / Hot restart 차이 확인
 * ✅ DoD:
 
-  * [ ] 기본 앱 실행 성공
-  * [ ] Home→Detail 이동 동작 확인
-  * [ ] Hot reload 반영 체험
+  * [x] 기본 앱 실행 성공
+  * [x] Home→Detail 이동 동작 확인 (Detail 페이지 없음 - 홈페이지에서 모든 기능 구현)
+  * [x] Hot reload 반영 체험
 
 ---
 
@@ -44,10 +44,10 @@
   * UI와 연결 (`context.watch`, `context.read`)
 * ✅ DoD:
 
-  * [ ] TODO 항목 추가 가능
-  * [ ] 체크박스로 완료 처리
-  * [ ] 삭제 버튼으로 제거
-  * [ ] UI 자동 갱신 확인
+  * [x] TODO 항목 추가 가능
+  * [x] 체크박스로 완료 처리
+  * [x] 삭제 버튼으로 제거
+  * [x] UI 자동 갱신 확인
 
 ---
 
