@@ -11,28 +11,50 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text('TODO App')),
-      body: ListView.builder(
-        itemCount: provider.todos.length,
-        itemBuilder: (context, index) {
-          final todo = provider.todos[index];
-          return ListTile(
-            title: Text(
-              todo.title,
-              style: TextStyle(
-                decoration: todo.isDone ? TextDecoration.lineThrough : null,
+      body: provider.todos.isEmpty
+          ? const Center(
+              child: Text(
+                "할 일이 없습니다",
+                style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
+            )
+          : ListView.builder(
+              itemCount: provider.todos.length,
+              itemBuilder: (context, index) {
+                final todo = provider.todos[index];
+                return Dismissible(
+                  key: ValueKey(todo.title + index.toString()),
+                  background: Container(color: Colors.red),
+                  onDismissed: (_) => provider.remove(index),
+                  child: Card(
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    child: ListTile(
+                      leading: Checkbox(
+                        value: todo.isDone,
+                        onChanged: (_) => provider.toggle(index),
+                      ),
+                      title: Text(
+                        todo.title,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          decoration: todo.isDone
+                              ? TextDecoration.lineThrough
+                              : null,
+                          color: todo.isDone ? Colors.grey : null,
+                        ),
+                      ),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete),
+                        onPressed: () => provider.remove(index),
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
-            leading: Checkbox(
-              value: todo.isDone,
-              onChanged: (_) => provider.toggle(index),
-            ),
-            trailing: IconButton(
-              icon: const Icon(Icons.delete),
-              onPressed: () => provider.remove(index),
-            ),
-          );
-        },
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           final controller = TextEditingController();

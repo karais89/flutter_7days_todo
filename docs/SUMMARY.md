@@ -8,7 +8,7 @@
 ## 진행 상황
 - [x] Day 1 — 프로젝트 세팅 & 라우팅
 - [x] Day 2 — Provider 상태관리 (TODO 추가/삭제/체크)
-- [ ] Day 3 — UI 개선 & UX 향상
+- [x] Day 3 — UI 개선 & UX 향상
 - [ ] Day 4 — 데이터 영구 저장
 - [ ] Day 5 — 테마 & 다국어
 - [ ] Day 6 — Firebase & 광고
